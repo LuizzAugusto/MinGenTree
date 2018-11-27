@@ -9,13 +9,20 @@ def start(default_values):
     result = []
     iterable = iter(default_values)
 
-    for value in iterable:
-        result.append([int(value), next(iterable), next(iterable)])
-
-    if default_values:
-        del default_values[0]
-
     if nodes:
+        for value in iterable:
+            if value in nodes.keys():
+                next_value = next(iterable)
+
+                if next_value in nodes[value]:
+                    result.append([int(nodes[value][next_value]), value, next_value])
+                else:
+                    print("Error, 2º value not found.")
+                    return
+            else:
+                print("Error, 1º value not found.")
+                return
+        
         default_values = _setDefaultValues(nodes, default_values)
         result = _algorithm(nodes, default_values, result)
         total_cost = sum(path[0] for path in result)

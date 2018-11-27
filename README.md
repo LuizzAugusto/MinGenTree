@@ -3,7 +3,7 @@
 This is a implementation of minimum generator tree algorithm.
 
 ### in terminal
-First load a json file typing open {weight_1 vertex1_1 vertex2_1 weight_2 vertex1_2 vertex2_2}. Then type start execute the algorithm. Type help for more instructions.
+First load a json file typing open {vertex1_1 vertex2_1 weight_2 vertex1_2 vertex2_2}. Then type start execute the algorithm. Type help for more instructions.
 
 json file structure:
 {
